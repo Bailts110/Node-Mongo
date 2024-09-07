@@ -1,20 +1,17 @@
 const mongoose = require('mongoose')
 
-const postSchema=new mongoose.Schema(
+const adsSchema=new mongoose.Schema(
     {
 
         title:{
             type:String,
             required:["true","Please add title to your post"]
         },
-        body:{
+        imageLink:{
             type:String,
-            required:["true","Please add body to your post"]
+            
         },
-        tags:{
-            type:Array,
-           default:[]
-        },
+        
         user_id:{
             
             type:mongoose.Schema.Types.ObjectId,
@@ -28,5 +25,5 @@ const postSchema=new mongoose.Schema(
 
 );
 
-const Post = mongoose.model('Post',postSchema);
-module.exports=Post;
+const ADS = mongoose.model('ADS',adsSchema);
+module.exports=ADS;
